@@ -347,8 +347,8 @@ const SPECIAL_MANAGERS = {
   "游利亚": { type: "multi", conditions: [ {field:"dept5", value:"财务中心"}, {field:"dept6", value:"便利餐饮连锁事业资金组"} ] },
   // 杨良奎 - 餐饮群财务中心副主管
   "杨良奎": { type: "dept5", value: "财务中心" },
-  // 吴丹 - 数智科技中心主管
-  "吴丹": { type: "dept5", value: "数智科技中心" },
+  // 吴丹 - 数智科技中心主管（工号 202505260007；另有同名的一阶主管吴丹 202602240001，需用工号区分）
+  "吴丹": { type: "dept5", value: "数智科技中心", id: "202505260007" },
   // 吕韦辰 - 研发中心主管
   "吕韦辰": { type: "dept5", value: "研发中心" },
   // 张普明 - 研发中心副主管（不含吕韦辰）
@@ -414,8 +414,10 @@ const SPECIAL_MANAGERS = {
             let groupBy = null;
             
             // 特殊规则（含蓝色特殊主管 及 需覆盖默认角色色的副主管）优先
-            if (SPECIAL_MANAGERS[user.name]) {
-                const rule = SPECIAL_MANAGERS[user.name];
+            // 同名不同工号（如吴丹）需用 id 区分：规则带 id 时仅对指定工号生效
+            const sRule = SPECIAL_MANAGERS[user.name];
+            if (sRule && (!sRule.id || sRule.id === user.id)) {
+                const rule = sRule;
                 if (rule.type === 'dept5') {
                     subordinates = DATA.filter(d => d.dept5 === rule.value);
                 } else if (rule.type === 'dept6') {
