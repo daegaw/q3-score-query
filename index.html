@@ -193,7 +193,7 @@
   {"name": "地力亚尔·吐尔地", "id": "202502100003", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐品牌行销部", "dept7": "西式快餐品牌行销一组", "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
   {"name": "姚凤阳", "id": "200710010410", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐开发加盟拓展部", "dept7": "西式快餐开发加盟组", "ai_match": 4.75, "ai_kpi": "7", "doc_match": 4.75, "doc_kpi": 12.75, "role": "group_manager"},
   {"name": "姚智捷", "id": "202004160006", "dept4": "餐饮群总部", "dept5": "数智科技中心", "dept6": "数智运营小组", "dept7": null, "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
-  {"name": "姚磊", "id": "202403010212", "dept4": "餐饮群总部", "dept5": "总经办", "dept6": null, "dept7": null, "ai_match": 5, "ai_kpi": "4", "doc_match": 5, "doc_kpi": "5", "role": "special_manager"},
+  {"name": "姚磊", "id": "202403010212", "dept4": "餐饮群总部", "dept5": "总经办", "dept6": null, "dept7": null, "ai_match": 4.5, "ai_kpi": 6, "doc_match": 4.6, "doc_kpi": 8, "role": "special_manager"},
   {"name": "姜妍", "id": "200707020001", "dept4": "餐饮群总部", "dept5": "财务中心", "dept6": null, "dept7": null, "ai_match": 3, "ai_kpi": "0", "doc_match": 5, "doc_kpi": "8", "role": "none"},
   {"name": "姜星辰", "id": "201811010003", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐本地及用户运营部", "dept7": "私域小组", "ai_match": 5, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
   {"name": "姬文林", "id": "199912010003", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐开发加盟拓展部", "dept7": "西式快餐开发加盟组", "ai_match": 4.75, "ai_kpi": "7", "doc_match": 4.75, "doc_kpi": 12.75, "role": "group_manager"},
@@ -341,8 +341,8 @@
 const SPECIAL_MANAGERS = {
   // 庞相勇 - 中式快餐事业本部主管
   "庞相勇": { type: "dept5", value: "中式快餐事业本部" },
-  // 姚磊 - 餐饮群总部总经理（按六级部门分组显示）
-  "姚磊": { type: "dept4", value: "餐饮群总部", groupBy: "dept6" },
+  // 姚磊 - 餐饮群总部总经理（按五级部门分组显示）
+  "姚磊": { type: "dept4", value: "餐饮群总部", groupBy: "dept5" },
   // 游利亚 - 餐饮群财务中心主管（财务中心 + 便利餐饮连锁事业资金组）
   "游利亚": { type: "multi", conditions: [ {field:"dept5", value:"财务中心"}, {field:"dept6", value:"便利餐饮连锁事业资金组"} ] },
   // 杨良奎 - 餐饮群财务中心副主管
