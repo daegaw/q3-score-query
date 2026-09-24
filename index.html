@@ -240,7 +240,7 @@
   {"name": "李楠", "id": "201004230003", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐营运及训练部", "dept7": "西式快餐营运训练组", "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
   {"name": "李江", "id": "199904010202", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐营运及训练部", "dept7": null, "ai_match": 4.5, "ai_kpi": "7", "doc_match": 4.5, "doc_kpi": 12.5, "role": "manager"},
   {"name": "李沫", "id": "200112010008", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐营运及训练部", "dept7": "西式快餐营运推进组", "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
-  {"name": "李纯东", "id": "200004010218", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐开发加盟拓展部", "dept7": null, "ai_match": 4.75, "ai_kpi": 7, "doc_match": 4.83, "doc_kpi": 12.83, "role": "manager"},
+  {"name": "李纯冬", "id": "200004010218", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐开发加盟拓展部", "dept7": null, "ai_match": 4.75, "ai_kpi": 7, "doc_match": 4.83, "doc_kpi": 12.83, "role": "manager"},
   {"name": "杨光", "id": "202306010014", "dept4": "餐饮群总部", "dept5": "数智科技中心", "dept6": "技术架构小组", "dept7": null, "ai_match": 5, "ai_kpi": "7", "doc_match": 4.5, "doc_kpi": "12.5", "role": "none"},
   {"name": "杨文惠", "id": "202603090002", "dept4": "餐饮群总部", "dept5": "人力发展中心", "dept6": null, "dept7": null, "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
   {"name": "杨林芬", "id": "200404010251", "dept4": "董事长室", "dept5": "便利餐饮连锁事业财务部", "dept6": "便利餐饮连锁事业效能效益组", "dept7": null, "ai_match": 2, "ai_kpi": "0", "doc_match": 5, "doc_kpi": "13", "role": "none"},
@@ -365,9 +365,9 @@ const SPECIAL_MANAGERS = {
   "丁成刚": { type: "dept5", value: "法务及合规部" },
   // 王敏崧 - 跨两个五级部门
   "王敏崧": { type: "multi_dept5", value: ["法务及合规部", "便利餐饮连锁事业法务及交易合规部"] },
-  // 姚凤阳 / 姬文林 - 西式快餐开发加盟拓展部副主管（按六级部门，排除李纯东，两人互不可见）
-  "姚凤阳": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯东", "姬文林"] },
-  "姬文林": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯东", "姚凤阳"] }
+  // 姚凤阳 / 姬文林 - 西式快餐开发加盟拓展部副主管（按六级部门，排除李纯冬，两人互不可见）
+  "姚凤阳": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯冬", "姬文林"] },
+  "姬文林": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯冬", "姚凤阳"] }
 };
         
         function doSearch() {
