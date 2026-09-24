@@ -364,7 +364,10 @@ const SPECIAL_MANAGERS = {
   // 丁成刚 - 餐饮群法务及合规部主管
   "丁成刚": { type: "dept5", value: "法务及合规部" },
   // 王敏崧 - 跨两个五级部门
-  "王敏崧": { type: "multi_dept5", value: ["法务及合规部", "便利餐饮连锁事业法务及交易合规部"] }
+  "王敏崧": { type: "multi_dept5", value: ["法务及合规部", "便利餐饮连锁事业法务及交易合规部"] },
+  // 姚凤阳 / 姬文林 - 西式快餐开发加盟拓展部副主管（按六级部门，排除李纯东，两人互不可见）
+  "姚凤阳": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯东", "姬文林"] },
+  "姬文林": { type: "dept6", value: "西式快餐开发加盟拓展部", exclude: ["李纯东", "姚凤阳"] }
 };
         
         function doSearch() {
@@ -391,7 +394,7 @@ const SPECIAL_MANAGERS = {
             }
             
             document.getElementById('userName').textContent = user.name + ' (' + user.id + ')';
-            const deptStr = [user.dept4, user.dept5, user.dept6, user.dept7].filter(Boolean).join(' / ');
+            const deptStr = [user.dept4, user.dept5, user.dept6].filter(Boolean).join(' / ');
             document.getElementById('userDept').textContent = deptStr;
             
             document.getElementById('scoreAiMatch').textContent = user.ai_match !== null ? user.ai_match : '未提交';
@@ -410,10 +413,13 @@ const SPECIAL_MANAGERS = {
             let subordinates = [];
             let groupBy = null;
             
-            if (user.role === 'special_manager' && SPECIAL_MANAGERS[user.name]) {
+            // 特殊规则（含蓝色特殊主管 及 需覆盖默认角色色的副主管）优先
+            if (SPECIAL_MANAGERS[user.name]) {
                 const rule = SPECIAL_MANAGERS[user.name];
                 if (rule.type === 'dept5') {
                     subordinates = DATA.filter(d => d.dept5 === rule.value);
+                } else if (rule.type === 'dept6') {
+                    subordinates = DATA.filter(d => d.dept6 === rule.value);
                 } else if (rule.type === 'dept4') {
                     subordinates = DATA.filter(d => d.dept4 === rule.value);
                 } else if (rule.type === 'multi_dept5') {
@@ -472,7 +478,7 @@ const SPECIAL_MANAGERS = {
                 '<th>协同匹配</th><th>协同考核</th>' +
                 '</tr></thead><tbody>';
             list.forEach(s => {
-                const dept = [s.dept4, s.dept5, s.dept6, s.dept7].filter(Boolean).join('/');
+                const dept = [s.dept4, s.dept5, s.dept6].filter(Boolean).join('/');
                 html += '<tr>' +
                     '<td>' + s.name + '</td>' +
                     '<td>' + s.id + '</td>' +
