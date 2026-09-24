@@ -342,7 +342,7 @@ const SPECIAL_MANAGERS = {
   // 庞相勇 - 中式快餐事业本部主管
   "庞相勇": { type: "dept5", value: "中式快餐事业本部" },
   // 姚磊 - 餐饮群总部总经理（按五级部门分组显示；另含六级部门=全球品牌总部的成员）
-  "姚磊": { type: "multi", conditions: [{field: "dept4", value: "餐饮群总部"}, {field: "dept6", value: "全球品牌总部"}], groupBy: "dept5" },
+  "姚磊": { type: "multi", conditions: [{field: "dept4", value: "餐饮群总部"}, {field: "dept6", value: "全球品牌总部"}], groupBy: "dept5", exclude: ["高敏慈"] },
   // 游利亚 - 餐饮群财务中心主管（财务中心 + 便利餐饮连锁事业资金组）
   "游利亚": { type: "multi", conditions: [ {field:"dept5", value:"财务中心"}, {field:"dept6", value:"便利餐饮连锁事业资金组"} ] },
   // 杨良奎 - 餐饮群财务中心副主管
