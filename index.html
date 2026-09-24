@@ -234,7 +234,7 @@
   {"name": "朱俊杰", "id": "202407010004", "dept4": "餐饮群总部", "dept5": "洞察及数据分析部", "dept6": null, "dept7": null, "ai_match": 5, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "special_manager"},
   {"name": "李俊", "id": "200711010001", "dept4": "餐饮群总部", "dept5": "中式快餐事业本部", "dept6": "中式快餐开发加盟拓展部", "dept7": null, "ai_match": 4.5, "ai_kpi": "7", "doc_match": 5, "doc_kpi": 13, "role": "manager"},
   {"name": "李大海", "id": "202110010007", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": null, "dept7": null, "ai_match": 3, "ai_kpi": 0, "doc_match": 4.5, "doc_kpi": 12.5, "role": "none"},
-  {"name": "李斌", "id": "202510090006", "dept4": "董事长室", "dept5": "便利餐饮连锁事业战略及经营企划部", "dept6": "便利餐饮连锁事业战略及经营企划部", "dept7": null, "ai_match": 5, "ai_kpi": "4", "doc_match": 5, "doc_kpi": "13", "role": "special_manager"},
+  {"name": "李斌", "id": "202510090006", "dept4": "董事长室", "dept5": "便利餐饮连锁事业战略及经营企划部", "dept6": "便利餐饮连锁事业战略及经营企划部", "dept7": null, "ai_match": 5, "ai_kpi": 7, "doc_match": 5, "doc_kpi": "13", "role": "special_manager"},
   {"name": "李昊", "id": "202105100007", "dept4": "董事长室", "dept5": "便利餐饮连锁事业社会责任与公共事务组", "dept6": "便利餐饮连锁事业社会责任与公共事务组", "dept7": null, "ai_match": 5, "ai_kpi": "7", "doc_match": 4.5, "doc_kpi": "12.5", "role": "none"},
   {"name": "李晓波", "id": "200808010007", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐营运及训练部", "dept7": "西式快餐营运推进组", "ai_match": 5, "ai_kpi": "7", "doc_match": 4, "doc_kpi": "12", "role": "none"},
   {"name": "李楠", "id": "201004230003", "dept4": "餐饮群总部", "dept5": "西式快餐事业本部", "dept6": "西式快餐营运及训练部", "dept7": "西式快餐营运训练组", "ai_match": 4, "ai_kpi": "7", "doc_match": 5, "doc_kpi": "13", "role": "none"},
@@ -335,14 +335,14 @@
   {"name": "黄健", "id": "201008040001", "dept4": "餐饮群总部", "dept5": "人力发展中心", "dept6": null, "dept7": null, "ai_match": 5, "ai_kpi": "7", "doc_match": 4.5, "doc_kpi": "12.5", "role": "none"},
   {"name": "黄红卫", "id": "202512010007", "dept4": "餐饮群总部", "dept5": "研发中心", "dept6": "西式快餐研发组", "dept7": null, "ai_match": 1.5, "ai_kpi": "0", "doc_match": 3, "doc_kpi": "6", "role": "none"},
   {"name": "黄钰珊", "id": "202608010008", "dept4": "董事长室", "dept5": "便利餐饮连锁事业财务部", "dept6": "便利餐饮连锁事业资金组", "dept7": null, "ai_match": 3.5, "ai_kpi": 7, "doc_match": 3, "doc_kpi": 13, "role": "none"},
-  {"name": "黄雯薇", "id": "202310090001", "dept4": "餐饮群总部", "dept5": "中式快餐事业本部", "dept6": "中式快餐品牌及用户运营部", "dept7": "中式快餐品牌营销组", "ai_match": 4.9, "ai_kpi": "0", "doc_match": 4.9, "doc_kpi": 12.9, "role": "manager"}
+  {"name": "黄雯薇", "id": "202310090001", "dept4": "餐饮群总部", "dept5": "中式快餐事业本部", "dept6": "中式快餐品牌及用户运营部", "dept7": "中式快餐品牌营销组", "ai_match": 4.9, "ai_kpi": 7, "doc_match": 4.9, "doc_kpi": 12.9, "role": "manager"}
         ];
         
 const SPECIAL_MANAGERS = {
   // 庞相勇 - 中式快餐事业本部主管
   "庞相勇": { type: "dept5", value: "中式快餐事业本部" },
-  // 姚磊 - 餐饮群总部总经理（按五级部门分组显示）
-  "姚磊": { type: "dept4", value: "餐饮群总部", groupBy: "dept5" },
+  // 姚磊 - 餐饮群总部总经理（按五级部门分组显示；另含六级部门=全球品牌总部的成员）
+  "姚磊": { type: "multi", conditions: [{field: "dept4", value: "餐饮群总部"}, {field: "dept6", value: "全球品牌总部"}], groupBy: "dept5" },
   // 游利亚 - 餐饮群财务中心主管（财务中心 + 便利餐饮连锁事业资金组）
   "游利亚": { type: "multi", conditions: [ {field:"dept5", value:"财务中心"}, {field:"dept6", value:"便利餐饮连锁事业资金组"} ] },
   // 杨良奎 - 餐饮群财务中心副主管
